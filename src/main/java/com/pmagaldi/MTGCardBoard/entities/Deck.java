@@ -10,9 +10,13 @@ import com.pmagaldi.MTGCardBoard.exceptions.SingletonFormatException;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_deck")
 public class Deck {
