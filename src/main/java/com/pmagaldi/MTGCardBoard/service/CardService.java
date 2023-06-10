@@ -31,7 +31,7 @@ public class CardService {
     }
 
     @Transactional(readOnly = true)
-    public Card findById(Integer id) throws BusinessException{
+    public CardDTO findById(Integer id) throws BusinessException{
 
         Optional<Card> card = cardRepository.findById(id);
 
@@ -39,11 +39,11 @@ public class CardService {
             throw new BusinessException("Not found this card");
         }
         
-        return card.get();
+        return new CardDTO(card.get());
     }
 
     @Transactional(readOnly = true)
-    public Card findByName(String name) throws BusinessException{
+    public CardDTO findByName(String name) throws BusinessException{
         
         Card card = cardRepository.findByName(name);
 
@@ -51,7 +51,7 @@ public class CardService {
             throw new BusinessException("Not found this card");
         }
         
-        return card;
+        return new CardDTO(card);
     }
     
 
@@ -75,4 +75,6 @@ public class CardService {
             throw new BusinessException("Not able to save card");
         }
     }
+
+
 }
