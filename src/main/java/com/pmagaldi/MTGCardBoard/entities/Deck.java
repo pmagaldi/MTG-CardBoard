@@ -42,17 +42,17 @@ public class Deck {
 
     public void setCards(Card card) throws BusinessException{
 
-        if(this.format.equals(Format.COMMANDER) && cards.contains(card)){
+        if(this.format.equals(Format.COMMANDER) && this.cards.contains(card)){
             throw new SingletonFormatException();
         }
 
-        if(this.format.equals(Format.COMMANDER) && cards.size() >= 100){
+        if(this.format.equals(Format.COMMANDER) && this.cards.size() >= 100){
             throw new OverLimitException();
         }
 
-        if(cards.contains(card)){
+        if(this.cards.contains(card)){
             AtomicInteger copies = new AtomicInteger();
-            cards.forEach(x -> {
+            this.cards.forEach(x -> {
                 if(copies.get() >= 4) {
                     throw new OverFourCopiesException();
                 }
