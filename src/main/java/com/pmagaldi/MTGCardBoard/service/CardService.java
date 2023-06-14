@@ -71,10 +71,22 @@ public class CardService {
                     .imageUrl(cardDTO.getImageUrl())
                 .build()
             );
-        } catch (RuntimeException e){
+        } catch (RuntimeException exception){
             throw new BusinessException("Not able to save card");
         }
     }
 
+    public void deleteCard(Integer id) throws BusinessException{
+        Optional<Card> card = cardRepository.findById(id);
 
+        if(!card.isPresent()){
+            throw new BusinessException("Unable to find card by id: "+id);
+        }
+
+        try{
+            cardRepository.delete(card.get());
+        } catch (RuntimeException exception) {
+            throw new BusinessException("Unable to delete card by id: "+id);
+        }
+    }
 }
