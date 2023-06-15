@@ -1,7 +1,6 @@
 package com.pmagaldi.MTGCardBoard.entities;
 
 import java.util.Arrays;
-import java.util.Map;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,7 +31,6 @@ public class Card {
     private String manaCost;
     private Integer cmc;
     private String[] colorIdentity;
-    private Map<Format, Legality> legalities;
     private boolean foil;
     private String setName;
     private String imageUrl;

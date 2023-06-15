@@ -65,7 +65,6 @@ public class CardService {
                     .manaCost(cardDTO.getManaCost())
                     .cmc(cardDTO.getCmc())
                     .colorIdentity(cardDTO.getColorIdentity())
-                    .legalities(cardDTO.getLegalities())
                     .foil(cardDTO.isFoil())
                     .setName(cardDTO.getSetName())
                     .imageUrl(cardDTO.getImageUrl())

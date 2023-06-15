@@ -1,12 +1,10 @@
 package com.pmagaldi.MTGCardBoard.DTO;
 
-import java.util.Map;
 
 import org.springframework.beans.BeanUtils;
 
 import com.pmagaldi.MTGCardBoard.entities.Card;
-import com.pmagaldi.MTGCardBoard.entities.Format;
-import com.pmagaldi.MTGCardBoard.entities.Legality;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +19,6 @@ public class CardDTO {
     private String manaCost;
     private Integer cmc;
     private String[] colorIdentity;
-    private Map<Format, Legality> legalities;
     private boolean foil;
     private String setName;
     private String imageUrl;
