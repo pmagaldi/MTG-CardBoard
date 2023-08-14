@@ -1,0 +1,16 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "MTG-CardBoard_Local",
+    "dateExported": "2023-08-14T02:52:30.287Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "URL_Cards",
+            "value": "localhost:8080/card"
+        },
+        {
+            "name": "URL_Decks",
+            "value": "localhost:8080/deck"
+        }
+    ]
+}

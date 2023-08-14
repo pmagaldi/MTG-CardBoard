@@ -1,0 +1,90 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MTG-CardBoard",
+    "dateExported": "2023-08-14T02:53:16.916Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "64f6cdcb-bad1-44c7-807d-720d00f62360",
+            "colId": "3ab4f3bc-1715-4dd0-9ee6-dd9a2f393a6b",
+            "containerId": "",
+            "name": "Post Card",
+            "url": "{{URL_Cards}}",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-14T01:53:58.625Z",
+            "modified": "2023-08-14T01:57:25.318Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"shock\",\n  \"lang\": \"EN\",\n  \"manaCost\": \"{R}\",\n  \"cmc\": 1,\n  \"colorIdentity\": [\"R\"],\n  \"foil\": false,\n  \"setName\": \"Core Set 2021\",\n  \"imageUrl\": \"https://cards.scryfall.io/png/front/5/9/59fa8e8d-bcb8-47bf-b71a-df11c8d0f2c9.png?1641847379\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2539fe16-ddeb-4add-a040-406bc390e71b",
+            "colId": "3ab4f3bc-1715-4dd0-9ee6-dd9a2f393a6b",
+            "containerId": "",
+            "name": "Get Card by Id",
+            "url": "{{URL_Cards}}/id=1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-08-14T01:56:57.134Z",
+            "modified": "2023-08-14T02:20:32.426Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4fe49836-8810-4fbd-8a97-e87689fd66ad",
+            "colId": "3ab4f3bc-1715-4dd0-9ee6-dd9a2f393a6b",
+            "containerId": "",
+            "name": "Get Card by Name",
+            "url": "{{URL_Cards}}/find?name=shock",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-08-14T02:20:58.904Z",
+            "modified": "2023-08-14T02:21:30.670Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "shock",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "5bc10094-efce-4f0d-bffb-0583d86aeeee",
+            "colId": "3ab4f3bc-1715-4dd0-9ee6-dd9a2f393a6b",
+            "containerId": "",
+            "name": "Get All Cards",
+            "url": "{{URL_Cards}}/all",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-08-14T02:06:43.809Z",
+            "modified": "2023-08-14T02:06:56.967Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a665d087-4010-4300-b7b5-be0689b29824",
+            "colId": "3ab4f3bc-1715-4dd0-9ee6-dd9a2f393a6b",
+            "containerId": "",
+            "name": "Delete Card",
+            "url": "{{URL_Cards}}/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-08-14T02:22:24.663Z",
+            "modified": "2023-08-14T02:26:05.477Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
