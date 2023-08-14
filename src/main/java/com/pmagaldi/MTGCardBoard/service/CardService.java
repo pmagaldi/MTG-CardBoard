@@ -59,7 +59,6 @@ public class CardService {
         try{
             cardRepository.save(
                 Card.builder()
-                    .id(cardDTO.getId())
                     .name(cardDTO.getName())
                     .lang(cardDTO.getLang())
                     .manaCost(cardDTO.getManaCost())

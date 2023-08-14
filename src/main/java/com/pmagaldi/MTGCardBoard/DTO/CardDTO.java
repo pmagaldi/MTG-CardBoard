@@ -1,10 +1,7 @@
 package com.pmagaldi.MTGCardBoard.DTO;
 
-
 import org.springframework.beans.BeanUtils;
-
 import com.pmagaldi.MTGCardBoard.entities.Card;
-
 
 import lombok.Getter;
 import lombok.Setter;

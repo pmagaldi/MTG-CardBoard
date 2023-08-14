@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pmagaldi.MTGCardBoard.DTO.CardDTO;
@@ -33,7 +34,7 @@ public class CardController {
         }
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/id={id}")
     public ResponseEntity<CardDTO> findById(@PathVariable Integer id){
         try{
             CardDTO result = cardService.findById(id);
@@ -43,8 +44,8 @@ public class CardController {
         }
     }
 
-    @GetMapping(value = "/{name}")
-    public ResponseEntity<CardDTO> findById(@PathVariable String name){
+    @GetMapping(value = "/find")
+    public ResponseEntity<CardDTO> findById(@RequestParam String name){
         try{
             CardDTO result = cardService.findByName(name);
             return ResponseEntity.ok().body(result);
@@ -63,8 +64,8 @@ public class CardController {
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> deleteCard(@RequestBody Integer id){
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> deleteCard(@PathVariable Integer id){
         try{
             cardService.deleteCard(id);
             return ResponseEntity.ok().build();
