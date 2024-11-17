@@ -12,6 +12,8 @@ import com.pmagaldi.MTGCardBoard.entities.Card;
 import com.pmagaldi.MTGCardBoard.exceptions.BusinessException;
 import com.pmagaldi.MTGCardBoard.repository.CardRepository;
 
+import static java.util.Optional.ofNullable;
+
 @Service
 public class CardService {
 
@@ -47,7 +49,7 @@ public class CardService {
         
         Card card = cardRepository.findByName(name);
 
-        if(!Optional.ofNullable(card).isPresent()){
+        if(!ofNullable(card).isPresent()){
             throw new BusinessException("Not found this card");
         }
         
@@ -86,5 +88,27 @@ public class CardService {
         } catch (RuntimeException exception) {
             throw new BusinessException("Unable to delete card by id: "+id);
         }
+    }
+
+    public CardDTO updateCard(Integer id, CardDTO cardDTO) throws BusinessException {
+        Optional<Card> card;
+        try {
+            card = cardRepository.findById(id);
+            if(card.isEmpty()){
+                throw new BusinessException(
+                        String.format("Unable to find card by id: {}, fail to update value.", id));
+            }
+        } catch (RuntimeException exception) {
+            throw new BusinessException(
+                    "Error on database",
+                    exception);
+        }
+        if(ofNullable(cardDTO.getCmc()).isPresent()){
+            card.get().setCmc(cardDTO.getCmc());
+        }
+        if(ofNullable(cardDTO.getLang()).isPresent()){
+            card.get().setLang(cardDTO.getLang());
+        }
+        return new CardDTO(card.get());
     }
 }
